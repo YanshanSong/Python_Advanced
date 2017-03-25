@@ -12,22 +12,23 @@ g = lambda x, y=2, z=3 : x + y + z
 print(g(1))  # 6
 print(g(1, y=4, z=5)) # 10
 
-# lambda常用高效操作列表
-# map()
+#**************************************************************
+# lambda常用高效序列操作
+# ① map()
 # 将序列中的元素依次通过处理函数处理后返回一个新的列表
 li = [1, 2, 3, 4, 5]
 # 序列中的每个元素加1
-print(list(map(lambda x : x+1, li)))  # [2, 3, 4, 5]
+print(list(map(lambda x : x + 1, li)))  # [2, 3, 4, 5]
 
 def f1(x):
 	return x+1
 print(list(map(f1, li)))
 
-# filter()
+# ② filter()
 # 将序列中的元素依次通过布尔函数过滤后返回一个新的列表
 print(list(filter(lambda x : x % 2 == 0, li))) # [2, 4]
 
-# reduce
+# ③ reduce
 # 注意 python3 调用reduce
 from functools import reduce
 # 将序列中的元素通过一个二元函数进行累积，返回一个结果
@@ -42,5 +43,8 @@ print(reduce(lambda x, y : x * y,li)) # 1*2*3*4*5 = 120
 print(reduce(lambda x, y : x*y, li, 100)) # 100*1*2*3*4*5 = 120000
 
 print(reduce(lambda x, y : x + y,li)) # 1+2+3+4+5 = 15
-print(reduce(lambda x, y : x + y,li, 100)) # 115
+print(reduce(lambda x, y : x + y,li, 100)) # 100+1+2+3+4+5 = 115
 
+# ④ sorted()结合lambda对列表进行排序
+# 函数原型:
+# sorter(iterable, cmp=None, key=None, reverse=False)

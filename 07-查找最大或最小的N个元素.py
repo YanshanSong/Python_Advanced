@@ -12,8 +12,8 @@ portfolio = [ {'name': 'IBM', 'shares': 100, 'price': 91.1},
 			  {'name': 'HPQ', 'shares': 35, 'price': 31.75}, 
 			  {'name': 'YHOO', 'shares': 45, 'price': 16.35}, 
 			  {'name': 'ACME', 'shares': 75, 'price': 115.65} ]
-cheap = heapq.nsmallest(3, portfolio, key=lambda s: s['price'])
-expensive = heapq.nlargest(3, portfolio, key=lambda s: s['price'])
+cheap = heapq.nsmallest(3, portfolio, key=lambda dict: dict['price'])
+expensive = heapq.nlargest(3, portfolio, key=lambda dict: dict['price'])
 
 print(cheap)
 print(expensive)
