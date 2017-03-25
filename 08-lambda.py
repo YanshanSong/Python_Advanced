@@ -35,12 +35,12 @@ from functools import reduce
 # reduce(function, sequence[,initial]) 
 # function参数是一个二元函数
 # reduce依次从sequence中取一个元素，和上一次调用function的结果
-# 做参数再次返回function
+# 做参数再次调用function
 # 第一次调用function时，如果提供initial参数
 # 会以sequence中的第一个元素和initial作为参数调用function
 # 否则会以sequence中的前两个元素做参数调用function
 print(reduce(lambda x, y : x * y,li)) # 1*2*3*4*5 = 120
-print(reduce(lambda x, y : x*y, li, 100)) # 100*1*2*3*4*5 = 120000
+print(reduce(lambda x, y : x * y, li, 100)) # 100*1*2*3*4*5 = 120000
 
 print(reduce(lambda x, y : x + y,li)) # 1+2+3+4+5 = 15
 print(reduce(lambda x, y : x + y,li, 100)) # 100+1+2+3+4+5 = 115
