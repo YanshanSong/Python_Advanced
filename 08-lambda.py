@@ -47,4 +47,4 @@ print(reduce(lambda x, y : x + y,li, 100)) # 100+1+2+3+4+5 = 115
 
 # ④ sorted()结合lambda对列表进行排序
 # 函数原型:
-# sorter(iterable, cmp=None, key=None, reverse=False)
+# sorted(iterable, cmp=None, key=None, reverse=False)

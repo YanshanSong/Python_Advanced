@@ -1,5 +1,5 @@
 # 函数原型:
-# sorter(iterable, cmp=None, key=None, reverse=False)
+# sorted(iterable, cmp=None, key=None, reverse=False)
 
 # iterable:可迭代对象(iterable)
 
