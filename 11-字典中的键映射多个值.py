@@ -45,18 +45,25 @@ e.setdefault('a', []).append(1)
 e.setdefault('a', []).append(2) 
 e.setdefault('b', []).append(4)
 
+# 但是很多程序员觉得 setdefault() 用起来有点别扭。因为每次调用都得创建一个 新的初始值的实例 (例子程序中的空列表 [])。
+
 # comparison
 pairs = [('sam',1),('sam',2),('sam',3),('Tom',1),('Tom',2),('Amy',2)]
-d = {}  # regular
+f = {}  # regular
 for key, value in pairs:
-	if key not in d:
-		d[key] = []
-	d[key].append(value)
+	if key not in f:
+		f[key] = []
+	f[key].append(value)
 # print(d['c'])  # Keyerror  # 换用d.get('c')即可
-print(d)
+print(f)
 
-d = defaultdict(list) 
+g = {}
+for key, value in pairs:
+	g.setdefault(key,[]).append(value)
+print(g)
+
+h = defaultdict(list) 
 for key, value in pairs: 
-	d[key].append(value)
-print(d['c'])    # []
-print(d)
+	h[key].append(value)
+print(h['c'])    # []
+print(h)
