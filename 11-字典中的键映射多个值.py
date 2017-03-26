@@ -14,7 +14,7 @@ b = {
 # 如果你想保持元素的插入顺序就应该使用列表
 # 如果想去掉重复元素就使用集合(并且不关心元素的顺序问题)
 
-# 可以很方便的使用collections模块中的defaultdict来构造这样的字典
+# 可以很方便地使用collections模块中的defaultdict来构造这样的字典
 # defaultdict的一个特征是它会自动初始化每个key刚开始对应的值
 # 所有只需要关注添加元素操作。
 
@@ -29,9 +29,13 @@ print(d.get('a')) # [1]
 
 for key, value in d.items():
 	print(key + ":" ,value)
-
+'''
+a: [1, 2]
+b: [4]
+'''
 # 需要注意的是， defaultdict会自动为将要访问的键 (就算目前字典中并不存在这样的键) 创建映射实体。
 
+# ----------------------------------------------------
 # 在普通字典上也可采用setdefault方法创建一个多值字典
 # dict.get(key[,v=None])      
 # 找到key返回value,找不到key返回v
@@ -55,15 +59,15 @@ for key, value in pairs:
 		f[key] = []
 	f[key].append(value)
 # print(d['c'])  # Keyerror  # 换用d.get('c')即可
-print(f)
+print(f) # {'Tom': [1, 2], 'sam': [1, 2, 3], 'Amy': [2]}
 
 g = {}
 for key, value in pairs:
 	g.setdefault(key,[]).append(value)
-print(g)
+print(g) # {'Tom': [1, 2], 'sam': [1, 2, 3], 'Amy': [2]}
 
 h = defaultdict(list) 
 for key, value in pairs: 
 	h[key].append(value)
 print(h['c'])    # []
-print(h)
+print(h) # defaultdict(<class 'list'>, {'Tom': [1, 2], 'sam': [1, 2, 3], 'c': [], 'Amy': [2]})
