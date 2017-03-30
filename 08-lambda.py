@@ -39,11 +39,11 @@ from functools import reduce
 # 第一次调用function时，如果提供initial参数
 # 会以sequence中的第一个元素和initial作为参数调用function
 # 否则会以sequence中的前两个元素做参数调用function
-print(reduce(lambda x, y : x * y,li)) # 1*2*3*4*5 = 120
+print(reduce(lambda x, y : x * y, li)) # 1*2*3*4*5 = 120
 print(reduce(lambda x, y : x * y, li, 100)) # 100*1*2*3*4*5 = 120000
 
-print(reduce(lambda x, y : x + y,li)) # 1+2+3+4+5 = 15
-print(reduce(lambda x, y : x + y,li, 100)) # 100+1+2+3+4+5 = 115
+print(reduce(lambda x, y : x + y, li)) # 1+2+3+4+5 = 15
+print(reduce(lambda x, y : x + y, li, 100)) # 100+1+2+3+4+5 = 115
 
 # ④ sorted()结合lambda对列表进行排序
 # 函数原型:

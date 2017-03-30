@@ -8,7 +8,7 @@
 # 如果第一个参数小于第二个参数，返回一个负数
 # 如果第一个参数等于第二个参数，返回零
 # 如果第一个参数大于第二个参数，返回一个正数
-# -----python3中cmp已经删除
+# -----python3中cmp已经删除----------------
 
 # key:指定一个接受一个参数的函数
 # 这个函数用于从每个元素中提取一个用于比较的关键字。
@@ -19,7 +19,7 @@
 
 # 一般来说，cmp和key可以使用lambda表达式
 
-# sort与sorted()的不同在于，sort是在原位重新排列列表
+# sort与sorted()有相同的功能，但不同在于，sort是在原位重新排列列表
 # 而sorted()是产生一个新的列表。
 
 # example:
@@ -36,8 +36,21 @@ student_tuples = [
         ('jane', 'B', 12),
         ('dave', 'B', 10),
 ]
-print(sorted(student_tuples, key=lambda student: student[2]))  
+# student_tuples.sort(key=lambda student : student[2], reverse = True)
+# print(student_tuples)  # 也可以
+print("正序:", sorted(student_tuples, key=lambda student: student[2]))  
 # sort by age
+# 逆序小技巧:数字型关键字前加负号
+print("逆序:", sorted(student_tuples, key=lambda student: -student[2]))
+
+# 字典
+student_dicts = [
+        {"name":'john', "grade":'A', "age": 15},
+        {"name":'jane', "grade":'B', "age": 12},
+        {"name":'dave', "grade":'B', "age": 10},
+]
+
+print("字典:", sorted(student_dicts, key=lambda dict:dict["name"]))
 
 # 对象
 class Student:
@@ -54,15 +67,9 @@ student_objects = [
         Student('dave', 'B', 10),
 ]
 
-# 字典
-student_dicts = [
-        {"name":'john', "grade":'A', "age": 15},
-        {"name":'jane', "grade":'B', "age": 12},
-        {"name":'dave', "grade":'B', "age": 10},
-]
+print("对象:", sorted(student_objects, key=lambda student:student.name))
 
-print(sorted(student_objects, key=lambda student:student.name))
-
+print("使用operator模块:")
 # operator模块函数
 # 上面key参数的使用非常广泛，因此python提供一些方便的函数
 # 使得访问方法更加容易和快速
