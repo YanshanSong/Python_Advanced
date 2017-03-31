@@ -72,7 +72,9 @@ for value in simple_generator_function():
 	print(value)
 
 # 可以通过调用iter()函数或者__next__()方法来迭代
-f = simple_generator_function()
+# f = simple_generator_function()
+# for each in f:
+# 	print(each)
 print(f.__next__())  # 1
 print(f.__next__())  # 2
 print(f.__next__())  # 3

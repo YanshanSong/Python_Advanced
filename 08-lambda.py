@@ -18,11 +18,11 @@ print(g(1, y=4, z=5)) # 10
 # 将序列中的元素依次通过处理函数处理后返回一个新的列表
 li = [1, 2, 3, 4, 5]
 # 序列中的每个元素加1
-print(list(map(lambda x : x + 1, li)))  # [2, 3, 4, 5]
+print(list(map(lambda x : x + 1, li)))  # [2, 3, 4, 5, 6]
 
 def f1(x):
 	return x+1
-print(list(map(f1, li)))
+print(list(map(f1, li)))  # [2, 3, 4, 5, 6]
 
 # ② filter()
 # 将序列中的元素依次通过布尔函数过滤后返回一个新的列表
