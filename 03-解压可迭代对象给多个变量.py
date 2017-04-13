@@ -1,6 +1,7 @@
 # 2017-03-21
 # 如果一个可迭代对象的元素个数超过接受变量的个数时，会抛出ValueError
 # Python的星号表达式可以用来解决这个问题。
+s
 '''
 例如:
 在学期末，你想统计下家庭作业的英俊成绩，但是排除第一个和最后一个分数。
@@ -23,7 +24,7 @@ print(name, email, phone_numbers)
 # 比如，你有一个公司前8个月销售数据的序列
 # 但你想看下最近一个月数据和前面7个月的平均值的对比
 sales_record =  [10, 8, 7, 1, 9, 5, 10, 3] 
-* trailing_qtrs, current_qtr = sales_record
+*trailing_qtrs, current_qtr = sales_record
 trailing_avg = sum(trailing_qtrs) / len(trailing_qtrs)
 print(trailing_qtrs, current_qtr, trailing_avg)
 

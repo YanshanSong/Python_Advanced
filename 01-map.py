@@ -1,5 +1,4 @@
 # 2017-03-19
-
 # Python map用法
 
 # ①对可迭代对象'iterable'中的每一个元素应用'function'方法
